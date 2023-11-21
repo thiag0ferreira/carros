@@ -8,11 +8,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ListaCarrrosComponent } from './componentes/lista-carrros/lista-carrros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormularioComponent
+    FormularioComponent,
+    ListaCarrrosComponent
   ],
   imports: [
     CommonModule,

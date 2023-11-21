@@ -13,46 +13,39 @@
 </header>
 
 <section class="pesquisa" id="divBusca">
-    <input type="text" id="txtBusca" placeholder="Buscar carros"/>
-    <button id="btnBusca">Buscar</button>
+  <input type="text" id="txtBusca" placeholder="Buscar carros"/>
+  <button id="btnBusca">Buscar</button>
 </section>
-
-
 
 <section>
   <h1>Cadastrar Carros</h1>
   <div>
-    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario">
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
       <div>
         <label for="nome">Nome:</label>
         <input formControlName="nome" type="text" id="nome" />
       </div>
       <div>
-        <h3> Escolha o tipo de carro: </h3>
-        <select name="tipo">
+        <h3>Escolha o tipo de carro:</h3>
+        <select formControlName="tipo" name="tipo">
+          <option value=""></option>
           <option value="classicos">Clássicos</option>
-          <option value="esportivos" >Esportivos</option>
+          <option value="esportivos">Esportivos</option>
           <option value="luxo">Luxo</option>
-          <input formControlName="tipo">
         </select>
-
       </div>
       <div>
-        <label for="descricao">descricao:</label>
-        <textarea id="descricao"></textarea>
-        <input formControlName="descricao">
+        <label for="descricao">Descrição:</label>
+        <textarea formControlName="descricao" id="descricao"></textarea>
       </div>
-
       <div>
-        <button> Salvar</button>
+        <button type="submit">Salvar</button>
       </div>
-
     </form>
-
   </div>
 </section>
 
-<button class="botao_lista" onclick="findAllCarros()">Listar Todos os Carros</button>
+<app-lista-carrros></app-lista-carrros>
 
 <footer>
   <p>&copy; 2023 Carros API. All rights reserved.</p>

@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class CarroService {
-  private API= 'http://localhost:8080/api/v1/carros/'
+  private API= 'http://localhost:8080/api/v1/carros'
   constructor(private  http: HttpClient) {  }
 
   enviar(formulario: Carros):Observable<Carros>{
