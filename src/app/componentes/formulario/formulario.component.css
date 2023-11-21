@@ -1,0 +1,87 @@
+/* Reset de estilos padrão para garantir consistência entre navegadores */
+body, h1, h2, h3, p, input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+h1, h3 {
+  margin: 0;
+}
+
+section {
+  margin: 20px;
+}
+
+/* Estilo para a seção de pesquisa */
+.pesquisa {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#txtBusca {
+  padding: 8px;
+  font-size: 16px;
+}
+
+#btnBusca {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para o formulário de cadastro */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button.botao_lista {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
