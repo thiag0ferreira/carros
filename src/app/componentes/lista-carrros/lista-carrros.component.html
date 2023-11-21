@@ -1,0 +1,32 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listar Carros</title>
+</head>
+<body>
+
+<button class="botao_lista" (click)="findAllCarros()"> Listar Todos os Carros</button>
+<div *ngIf="mostrar">
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of listaCarros">
+      <td>{{ item.id}}</td>
+      <td>{{ item.nome}}</td>
+      <td>{{ item.tipo}}</td>
+      <td>{{ item.descricao}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+
