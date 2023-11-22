@@ -58,3 +58,25 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: #fff;
 }
+
+/* Estilos para os botões dentro da célula da tabela */
+td button {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Cursor de ponteiro ao passar por cima */
+  margin-right: 5px; /* Espaço à direita dos botões para separação */
+}
+
+/* Estilos específicos para o botão de editar */
+.botao-editar img {
+  margin-right: 15px;
+  width: 20px; /* Largura da imagem */
+  height: 20px; /* Altura da imagem */
+}
+
+/* Estilos específicos para o botão de excluir */
+.botao-excluir img {
+  margin-right: 15px;
+  width: 20px; /* Largura da imagem */
+  height: 20px; /* Altura da imagem */
+}

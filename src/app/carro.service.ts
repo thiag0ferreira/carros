@@ -17,5 +17,16 @@ export class CarroService {
   getCarros():Observable<Carros[]> {
     return this.http.get<Carros[]>(this.API)
   }
+
+  update(carros: Carros):Observable<Carros> {
+    const url = `${this.API}/${carros.id}`
+    return this.http.put<Carros>(url,carros)
+
+  }
+
+  delete(id: number):Observable<Carros> {
+    const url=`${this.API}/${id}`
+    return this.http.delete<Carros>(url)
+  }
 }
 

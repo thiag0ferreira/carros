@@ -52,4 +52,23 @@ export class ListaCarrrosComponent implements OnInit {
     );
     return this.listaCarros;
   }
-}
+
+  updateCarro() {
+    this.service.update(this.carros).subscribe(()=> {
+    })
+  }
+
+  deleteCarro(item: any) {
+    if(item.id) {
+      this.service.delete(item.id).subscribe(
+        response => {
+          console.log('Requisição GET bem-sucedida', response);
+          this.buscarTodos();
+        },
+        error => {
+          console.error('Erro na requisição GET', error);
+        }
+        )
+      }
+    }
+  }

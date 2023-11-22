@@ -12,8 +12,10 @@ export class FormularioComponent implements OnInit {
     formulario = new FormGroup({
     nome: new FormControl('', [Validators.required]),
     tipo: new FormControl('', [Validators.required]),
-    descricao: new FormControl('', [Validators.required])
+    descricao: new FormControl('', [Validators.required]),
+
   });
+  private listaCarros: Carros[]=[];
 
   constructor(
     private service: CarroService
@@ -41,4 +43,5 @@ enviarFormulario(){
   );
 
 }
+
 }

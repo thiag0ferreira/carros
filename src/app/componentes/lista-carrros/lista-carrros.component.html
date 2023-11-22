@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -5,7 +6,6 @@
   <title>Listar Carros</title>
 </head>
 <body>
-
 <button class="botao_lista" (click)="findAllCarros()"> Listar Todos os Carros</button>
 <div *ngIf="mostrar">
   <table>
@@ -15,6 +15,7 @@
       <th>Nome</th>
       <th>Tipo</th>
       <th>Descrição</th>
+      <th>Update/Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -22,11 +23,19 @@
       <td>{{ item.id}}</td>
       <td>{{ item.nome}}</td>
       <td>{{ item.tipo}}</td>
-      <td>{{ item.descricao}}</td>
+      <td>{{ item.descricao }}</td>
+      <td>
+        <button (click)="updateCarro()" class="botao-editar">
+          <img src="./assets/icone-editar.png" alt="Botão editar"></button>
+        <button (click)="deleteCarro(item)" class="botao-excluir">
+          <img src="./assets/icone-excluir.png" alt="botão excluir"></button>
+      </td>
     </tr>
     </tbody>
   </table>
 </div>
+
+<div class="overlay"></div>
+
 </body>
 </html>
-
