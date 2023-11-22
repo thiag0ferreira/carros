@@ -15,24 +15,34 @@
       <th>Nome</th>
       <th>Tipo</th>
       <th>Descrição</th>
-      <th>Update/Delete</th>
+      <th>Ações</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let item of listaCarros">
-      <td>{{ item.id}}</td>
-      <td>{{ item.nome}}</td>
-      <td>{{ item.tipo}}</td>
-      <td>{{ item.descricao }}</td>
+    <tr *ngFor="let carro of listaCarros">
+      <td>{{ carro.id }}</td>
       <td>
-        <button (click)="updateCarro()" class="botao-editar">
-          <img src="./assets/icone-editar.png" alt="Botão editar"></button>
-        <button (click)="deleteCarro(item)" class="botao-excluir">
-          <img src="./assets/icone-excluir.png" alt="botão excluir"></button>
+        <span *ngIf="!carro.editing">{{ carro.nome }}</span>
+        <input *ngIf="carro.editing" [(ngModel)]="carro.nome" />
+      </td>
+      <td>
+        <span *ngIf="!carro.editing">{{ carro.tipo }}</span>
+        <input *ngIf="carro.editing" [(ngModel)]="carro.tipo" />
+      </td>
+      <td>
+        <span *ngIf="!carro.editing">{{ carro.descricao }}</span>
+        <input *ngIf="carro.editing" [(ngModel)]="carro.descricao" />
+      </td>
+      <td>
+        <button (click)="toggleEditing(carro)">{{ carro.editing ? 'Salvar' : 'Editar' }}</button>
+        <button (click)="deleteCarro(carro)">Deletar</button>
       </td>
     </tr>
     </tbody>
   </table>
+
+
+
 </div>
 
 <div class="overlay"></div>

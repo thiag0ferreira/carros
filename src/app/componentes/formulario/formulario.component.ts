@@ -36,6 +36,7 @@ enviarFormulario(){
   this.service.enviar(formSave).subscribe(
     response => {
       console.log('Requisição POST bem-sucedida', response);
+      this.enviarFormulario();
     },
     error => {
       console.error('Erro na requisição POST', error);

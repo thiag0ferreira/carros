@@ -3,4 +3,5 @@ export interface Carros {
   nome: string;
   tipo: string;
   descricao: string;
+  editing?: boolean;
 }
