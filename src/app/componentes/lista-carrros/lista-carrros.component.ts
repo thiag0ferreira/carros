@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Carros} from "../formulario/carro";
 import {CarroService} from "../../carro.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-lista-carrros',
@@ -34,8 +35,21 @@ export class ListaCarrrosComponent implements OnInit {
     console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
     this.mostrar = !this.mostrar;
     if (this.mostrar === true){
-      this.service.;
+      this.buscarTodos();
     }
   }
 
+
+  buscarTodos(): Carros[] {
+    this.service.getCarros().subscribe(
+      response => {
+        console.log('Requisição GET bem-sucedida', response);
+        this.listaCarros = response;
+      },
+      error => {
+        console.error('Erro na requisição GET', error);
+      }
+    );
+    return this.listaCarros;
+  }
 }

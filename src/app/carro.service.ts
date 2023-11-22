@@ -13,4 +13,9 @@ export class CarroService {
   enviar(formulario: Carros):Observable<Carros>{
     return this.http.post<Carros>(this.API, formulario)
   }
+
+  getCarros():Observable<Carros[]> {
+    return this.http.get<Carros[]>(this.API)
+  }
 }
+
